@@ -16,24 +16,24 @@ Bikeframe_900;P_US;Redframes;50;Scope 3.1 - Purchased goods and services
 Bikeframe_900;P_DE;Greenframes;10;Scope 3.1 - Purchased goods and services
 Bikeframe_900;P_SV;Yellowframes;30;Scope 3.1 - Purchased goods and services
 ```
-3. Create table e.g.
+3. Create table, the columns may have German names ;-) e.g.
 ```
 define table zmk_product_co2 {
 
-  key product        : abap.char(20) not null;
-  key plant          : abap.char(20) not null;
-  key supplier       : abap.char(20) not null;
+  key produkt        : abap.char(20) not null;
+  key werk           : abap.char(20) not null;
+  key lieferant      : abap.char(20) not null;
   co2e_kg            : abap.dec(10,2);
   ghg_scope_category : abap.char(40);
 }
 ```
-4. Create CDS view, here for simplicity it is a complete projection, e.g.
+4. Create Data Definition, i.e. a CDS view. Here for simplicity it is a complete projection and we abstract from the underlying column names, e.g.
 ```
 define view entity ZMK_R_PRODUCT_CO2 as select from zmk_product_co2
 {
-    key product as Product,
-    key plant as Plant,
-    key supplier as Supplier,
+    key produkt as Product,
+    key werk as Plant,
+    key lieferant as Supplier,
     co2e_kg as Co2e_Kg,
     ghg_scope_category as ghg_scope_category
 }

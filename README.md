@@ -98,3 +98,5 @@ A service binding will be generated. Click "Publish" and "Preview".
 Your fresh new Web shop will open in your browser :-)
 
 ![alt text](BrowserWebShop.png)
+
+8. (optional) For validations, automatic determination of values, checking if there is enough stock in your warehouse before confirming a customer order, or any other business functionality on top of our data, you should look into RAP BOs. If you now want to generate a RAP BO on top of your CDS view, I can recommend this tutorial https://github.com/SAP-samples/abap-platform-rap630/ to learn how. 
